@@ -1,9 +1,8 @@
 package com.completedSpring.photonlife.daos;
 
 
-import com.completedSpring.photonlife.*;
-import com.completedSpring.photonlife.models.Post;
-import com.completedSpring.photonlife.models.User;
+import com.completedSpring.photonlife.models.Post.Post;
+import com.completedSpring.photonlife.models.Users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
