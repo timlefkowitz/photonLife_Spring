@@ -3,6 +3,7 @@ package com.completedSpring.photonlife.controllers.PostControllers;
 
 import com.completedSpring.photonlife.daos.PostRepository;
 import com.completedSpring.photonlife.daos.UsersRepository;
+
 import com.completedSpring.photonlife.services.Email.EmailService;
 import com.completedSpring.photonlife.services.Features.SearchFeatureStringService;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Controller;
 public class PostController {
 
     private final SearchFeatureStringService searchFeatureStringService;
-    private final EmailService emailService;
+//    private final EmailService emailService;
 
 
 
@@ -23,7 +24,7 @@ public class PostController {
         this.postDao = postDao;
         this.usersDao = usersDao;
         this.searchFeatureStringService = searchFeatureStringService;
-        this.emailService = EmailService;
+//        this.emailService = EmailService;
     }
 
 
@@ -52,8 +53,8 @@ public class PostController {
         this.usersDao = usersDao;
     }
 
-    public EmailService getEmailService() {
-        return emailService;
-
-    }
+//    public EmailService getEmailService() {
+//        return emailService;
+//
+//    }
 }
