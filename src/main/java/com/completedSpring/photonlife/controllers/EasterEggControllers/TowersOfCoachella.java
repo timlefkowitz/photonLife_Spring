@@ -1,4 +1,4 @@
-//Fig. 18.11: TowersOfHanoi.java
+package com.completedSpring.photonlife.controllers.EasterEggControllers;//Fig. 18.11: TowersOfHanoi.java
 // Towers of Hanoi solution with a recursive method.
 
 
@@ -41,7 +41,7 @@
 
 
 
-public class TowersOfHanoi
+class TowersOfHanoi
 {
 
 
@@ -66,7 +66,7 @@ public class TowersOfHanoi
         //move (disks - 1) disk from sourcePeg to destinationPeg
         solveTowers(disks -1, tempPeg, destinationPeg, sourcePeg);
     }
-
+//
     public static void main(String[] args)
     {
         int startPeg = 1;
