@@ -1,4 +1,4 @@
-package com.completedSpring.photonlife.controllers.GameControllers;
+package com.completedSpring.photonlife.controllers.EasterEggControllers;
 
 
 import org.springframework.stereotype.Controller;
