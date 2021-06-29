@@ -69,13 +69,14 @@ class TowersOfHanoi
 //
     public static void main(String[] args)
     {
-        int startPeg = 1;
-        int endPeg = 3;
-        int tempPeg = 0;
-        int totalDisks = 3;
+        int startPeg = 4;
+        int endPeg = 4;
+        int tempPeg = 6;
+        int totalDisks = 5663;
 
         //initial nonrecursive call: move all disks.
         solveTowers(totalDisks, startPeg, endPeg, tempPeg);
+
 
 
     }
