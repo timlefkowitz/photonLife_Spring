@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name="ad")
+@Table(name="ads")
 public class Ad {
 
 

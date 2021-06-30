@@ -8,10 +8,10 @@
 
 <nav th:replace"fragments/navbar :: navbar"></nav>
 <div class="container">
-    <div th:if="${ad == null}">
+    <div th:if="${ads == null}">
         Ad not found.
     </div>
-    <div th:if="${ad}">
+    <div th:if="${ads}">
         <div th:text="adId">ID</div>
         <div th:text="ad.title">Title</div>
         <div th:text="ad.description">Description</div>
