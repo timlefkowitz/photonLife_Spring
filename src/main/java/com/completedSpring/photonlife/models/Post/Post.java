@@ -1,111 +1,217 @@
-package com.completedSpring.photonlife.models.Post;
-
-
-import com.completedSpring.photonlife.models.Ads.AdImage;
-import com.completedSpring.photonlife.models.Users.User;
+package com.completedSpring.photonlife.models.Users;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
-@Entity
-@Table (name="Post")
 public class Post {
 
-
-    @ManyToOne
-    @JoinColumn (name = "owner_id")
-    private User owner;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //All ads have a ad.title
     @Column(nullable = false, length = 100)
-    private String title;
+    private String AuthorId;
 
-    @Column(nullable = false)
-    private String description;
+    @Column(nullable = false, length = 100)
+    private String ParentId;
 
-//    @OneToOne
-//    private User owner;
+    @Column(nullable = false, length = 100)
+    private String Title;
+
+    @Column(nullable = false, length = 100)
+    private String MetaTitle;
+
+    @Column(nullable = false, length = 50)
+    private String Slug;
+
+    @Column(nullable = false, length = 50)
+    private String Summary;
+
+    /// This is for
+    @Column(name = "Published")
+    private java.sql.Date LastLogin;
+
+    @Column(name = "CreatedAt")
+    private java.sql.Timestamp publishedOn;
+
+    @Column(name = "UpdatedAt")
+    private java.sql.Timestamp publishedOn;
+
+    @Column(name = "PublishedAt")
+    private java.sql.Timestamp publishedOn;
+
+    @Column(nullable = false, length = 50)
+    private String content;
+
+    @Column(nullable = false, length = 250)
+    private String passwordHash;
+
+    ////// DATE COLUMNS ARE HERE BASED ON MY DATABASE DESIGN
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ad")
-    private List<AdImage> images;
+    @Column(nullable = false, length = 250)
+    private String ad;
 
 
+    //Author details to be displayed on the author page
+    @Column(nullable = false, length = 50)
+    private String profile;
+
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private List<com.completedSpring.photonlife.models.Post.Post> posts;
 
 
-
-    /*
-    ----------------------------------------------------------------------------------------------
-     *////              Constructors
-
-
-    public Post() {
-    }
-
-    public Post(long id, String title, String description, User user, List<AdImage> images) {
+    public Post(long id, String authorId, String parentId, String title, String metaTitle, String slug, String summary, Date lastLogin, Timestamp publishedOn, Timestamp publishedOn1, Timestamp publishedOn2, String content, String passwordHash, String ad, String profile, String email, String email1, String email2, List<com.completedSpring.photonlife.models.Post.Post> posts) {
         this.id = id;
-        this.title = title;
-        this.description = description;
-        this.images = images;
-    }
-
-    public Post(String title, String description, User owner, List<AdImage> images) {
-        this.title = title;
-        this.description = description;
-        this.owner = owner;
-        this.images = images;
-    }
-
-    public static User getOwner() {
-        return null;
+        AuthorId = authorId;
+        ParentId = parentId;
+        Title = title;
+        MetaTitle = metaTitle;
+        Slug = slug;
+        Summary = summary;
+        LastLogin = lastLogin;
+        this.publishedOn = publishedOn;
+        this.publishedOn = publishedOn1;
+        this.publishedOn = publishedOn2;
+        this.content = content;
+        this.passwordHash = passwordHash;
+        this.ad = ad;
+        this.profile = profile;
+        this.email = email;
+        this.email = email1;
+        this.email = email2;
+        this.posts = posts;
     }
 
     public long getId() {
         return id;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
 
+    public String getAuthorId() {
+        return AuthorId;
+    }
+
+    public void setAuthorId(String authorId) {
+        AuthorId = authorId;
+    }
+
+    public String getParentId() {
+        return ParentId;
+    }
+
+    public void setParentId(String parentId) {
+        ParentId = parentId;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getMetaTitle() {
+        return MetaTitle;
     }
 
-    public List<AdImage> getImages() {
-        return images;
+    public void setMetaTitle(String metaTitle) {
+        MetaTitle = metaTitle;
     }
 
-    public void setImages(List<AdImage> images) {
-        this.images = images;
+    public String getSlug() {
+        return Slug;
     }
 
-//    public static User getOwner() {
-//        return owner;
-//    }
+    public void setSlug(String slug) {
+        Slug = slug;
+    }
 
-//    public void setOwner(User owner) {
-//        this.owner = owner;
-//    }
+    public String getSummary() {
+        return Summary;
+    }
 
+    public void setSummary(String summary) {
+        Summary = summary;
+    }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
+    public Date getLastLogin() {
+        return LastLogin;
+    }
+
+    public void setLastLogin(Date lastLogin) {
+        LastLogin = lastLogin;
+    }
+
+    public Timestamp getPublishedOn() {
+        return publishedOn;
+    }
+
+    public void setPublishedOn(Timestamp publishedOn) {
+        this.publishedOn = publishedOn;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public String getAd() {
+        return ad;
+    }
+
+    public void setAd(String ad) {
+        this.ad = ad;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<com.completedSpring.photonlife.models.Post.Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<com.completedSpring.photonlife.models.Post.Post> posts) {
+        this.posts = posts;
     }
 }
