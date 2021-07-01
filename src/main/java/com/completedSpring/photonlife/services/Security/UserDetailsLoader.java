@@ -6,19 +6,21 @@ import com.completedSpring.photonlife.repos.UsersRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserDetailsLoader implements UserDetailsService {
 
-    private final UsersRepository users;
+    private final UsersRepository usersDao;
 
-    public UserDetailsLoader(User users){
-        this.users = (UsersRepository) users;
+    public UserDetailsLoader(UsersRepository usersDao) {
+        this.usersDao = usersDao;
     }
 
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = users.findByUsername(username);
+        User user = usersDao.findByUsername(username);
         if(user == null){
             throw new UsernameNotFoundException("No user found for " + username);
         }
