@@ -15,25 +15,53 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
-
     @Column(nullable = false, length = 100)
     private String firstName;
 
     @Column(nullable = false, length = 100)
     private String lastName;
 
-    @Column(nullable = false, length = 50)
-    private String userName;
+    @Column(nullable = false, length = 100)
+    private String middleName;
+
+    @Column(nullable = false, length = 100)
+    private String mobile;
 
     @Column(nullable = false, length = 50)
     private String email;
 
+    @Column(nullable = false, length = 50)
+    private String userName;
+
     @Column(nullable = false, length = 250)
-    private String password;
+    private String passwordHash;
+
+    ////// DATE COLUMNS ARE HERE BASED ON MY DATABASE DESIGN
+
+
+    /// This is for
+    @Column(name = "LastLogin")
+    private java.sql.Date LastLogin;
+
+    @Column(name = "RegisteredAt")
+    private java.sql.Timestamp publishedOn;
 
     @Column(nullable = false, length = 250)
     private String ad;
+
+
+        //Author details to be displayed on the author page
+    @Column(nullable = false, length = 50)
+    private String profile;
+
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    @Column(nullable = false, length = 50)
+    private String email;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<Post> posts;
@@ -50,7 +78,7 @@ public class User {
     public User(String userName, String email, String password, List<Post> posts) {
         this.userName = userName;
         this.email = email;
-        this.password = password;
+        this.passwordHash = password;
         this.posts = posts;
 
         // i want to take firstname and lastname off for now
@@ -65,7 +93,7 @@ public class User {
         this.id = id;
         this.email = email;
         this.userName = userName;
-        this.password = password;
+        this.passwordHash = password;
         this.posts= posts;
     }
 
@@ -76,7 +104,7 @@ public class User {
         id = copy.id;
         email = copy.userName;
         userName = copy.userName;
-        password = copy.password;
+        passwordHash = copy.passwordHash;
     }
 
 
@@ -90,7 +118,7 @@ public class User {
 //        this.lastName = lastName;
         this.userName = userName;
         this.email = email;
-        this.password = password;
+        this.passwordHash = password;
 
         // Unsure if i can just add this.post here. because i would have to target the same post when posted?
         this.posts = posts;
@@ -149,11 +177,11 @@ public class User {
     }
 
     public String getPassword() {
-        return password;
+        return passwordHash;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.passwordHash = password;
     }
 //    public List<Ad> getAd(){
 //        return ad;
@@ -186,5 +214,8 @@ public class User {
 
     public String getUserName() {
         return userName;
+    }
+
+    public String getOrderNumber() {
     }
 }

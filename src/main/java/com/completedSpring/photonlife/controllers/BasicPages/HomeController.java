@@ -1,6 +1,8 @@
 package com.completedSpring.photonlife.controllers.BasicPages;
 
 
+import com.completedSpring.photonlife.models.Users.User;
+import com.completedSpring.photonlife.repos.UsersRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -8,24 +10,23 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HomeController {
 
-    private final UserRepository userDao;
+    private final UsersRepository usersDao;
 
     //    @Autowired
-    public OrderController(OrderRepository orderDao){
-        this.orderDao = orderDao;
+    public HomeController(UsersRepository usersDao) {
+        this.usersDao = usersDao;
     }
 
     // Show Constructors
 
-    @GetMapping("/show")
+    @GetMapping("/")
     public String show(Model view){
-        view.addAttribute("ads", orderDao.findAll());
-        return"orders/show";
+        return"index";
     }
 
     @GetMapping("/show/{id}")
     public String showById(@PathVariable Long id, Model view){
-        view.addAttribute("ads", orderDao.getById(id));
+        view.addAttribute("ads", usersDao.getById(id));
         return "orders/show";
     }
 
@@ -35,28 +36,28 @@ public class HomeController {
     @GetMapping("/show/{id}/edit")
     public String viewEditForm(@PathVariable Long id, Model view)
     {
-        view.addAttribute("ads", orderDao.getById(id));
+        view.addAttribute("ads", usersDao.getById(id));
         return "orders/edit";
     }
 
     @PostMapping("show/{id}/edit")
-    public String updateOrder(@PathVariable long id, @ModelAttribute Order orderToUpdate){
-        orderDao.save(orderToUpdate);
+    public String updateOrder(@PathVariable long id, @ModelAttribute User orderToUpdate){
+        usersDao.save(orderToUpdate);
         return "redirect:/show" + orderToUpdate.getOrderNumber();
     }
 
     @GetMapping("show/{id}/delete")
     public String showdelete(@PathVariable Long id, Model view)
     {
-        view.addAttribute("ads", orderDao.getById(id));
+        view.addAttribute("ads", usersDao.getById(id));
         return "orders/delete";
     }
 
     @PostMapping("show/{id}/delete")
     public String deleteOrder(@PathVariable Long id)
     {
-        Order order = orderDao.getById(id);
-        orderDao.delete(order);
+        UsersRepository user = usersDao.getById(id);
+        usersDao.delete(user);
         return "redirect:/show";
     }
 
@@ -69,12 +70,16 @@ public class HomeController {
     }
 
     @PostMapping("/create")
-    public String addNewOrder(@RequestParam(name="email") String email, @RequestParam(name="totalPrice") Double totalPrice){
+    public String addNewOrder(@RequestParam(name="firstName") String firstName, @RequestParam(name="lastName") String lastName ,@RequestParam(name="email") String email, @RequestParam(name="userName") Double userName, @RequestParam(name="password") String password, @RequestParam(name="ad") String ad){
 
-        Order n = new Order();
-        n.setTotalPrice(totalPrice);
+        User n = new User();
+        n.setFirstName(firstName);
+        n.setLastName(lastName);
+        n.setUserName(userName);
         n.setEmail(email);
-        orderDao.save(n);
+        n.setpassword(password);
+        n.setAd(ad);
+        usersDao.save(n);
         return "redirect:/show";
     }
 
