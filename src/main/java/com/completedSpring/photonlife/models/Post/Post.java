@@ -51,14 +51,14 @@ public class Post {
     ////// DATE COLUMNS ARE HERE BASED ON MY DATABASE DESIGN
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<User> users;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+//    private List<User> users;
 
 
     //////// Constructors
 
 
-    public Post(long id, String authorId, String parentId, String title, String metaTitle, String slug, String summary, Date published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, List<User> users) {
+    public Post(long id, String authorId, String parentId, String title, String metaTitle, String slug, String summary, Date published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content) {
         this.id = id;
         AuthorId = authorId;
         ParentId = parentId;
@@ -71,7 +71,6 @@ public class Post {
         UpdatedAt = updatedAt;
         PublishedAt = publishedAt;
         this.content = content;
-        this.users = users;
     }
 
 
@@ -171,11 +170,11 @@ public class Post {
         this.content = content;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+//    public List<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(List<User> users) {
+//        this.users = users;
+//    }
 }

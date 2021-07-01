@@ -39,13 +39,13 @@ public class PostCommentTable {
     @Column(nullable = false, length = 50)
     private String content;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<User> users;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+//    private List<User> users;
 
     ///  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
     //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]    Constructors
 
-    public PostCommentTable(long id, String postId, String parentId, String title, Date published, Timestamp createdAt, Timestamp createdAt1, String content, List<User> users) {
+    public PostCommentTable(long id, String postId, String parentId, String title, Date published, Timestamp createdAt, Timestamp createdAt1, String content) {
         this.id = id;
         PostId = postId;
         ParentId = parentId;
@@ -54,7 +54,7 @@ public class PostCommentTable {
         CreatedAt = createdAt;
         CreatedAt = createdAt1;
         this.content = content;
-        this.users = users;
+
     }
 
 
@@ -118,11 +118,11 @@ public class PostCommentTable {
         this.content = content;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+//    public List<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(List<User> users) {
+//        this.users = users;
+//    }
 }

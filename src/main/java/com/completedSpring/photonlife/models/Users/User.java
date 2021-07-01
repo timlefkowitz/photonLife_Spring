@@ -55,14 +55,14 @@ public class User {
     @Column(nullable = false, length = 50)
     private String profile;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<User> users;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+//    private List<User> users;
 
     /*
     ------------------------------------------------------------------------------------------------------------
      */ //          Constructors
 
-    public User(long id, String firstName, String middleName, String lastName, long mobile, String email, String userName, String passwordHash, Timestamp subscribedOn, Timestamp lastLogin, Date publishedOn, String intro, String profile, List<User> users) {
+    public User(long id, String firstName, String middleName, String lastName, long mobile, String email, String userName, String passwordHash, Timestamp subscribedOn, Timestamp lastLogin, Date publishedOn, String intro, String profile) {
         this.id = id;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -76,7 +76,6 @@ public class User {
         this.publishedOn = publishedOn;
         Intro = intro;
         this.profile = profile;
-        this.users = users;
     }
 
     public User(Timestamp registeredAt) {
@@ -204,14 +203,6 @@ public class User {
 
     public void setProfile(String profile) {
         this.profile = profile;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
     }
 
     public void setpasswordHash(String password) {
