@@ -1,8 +1,8 @@
 package com.completedSpring.photonlife.controllers.BasicPages;
 
-import com.completedSpring.photonlife.daos.PostRepository;
-import com.completedSpring.photonlife.daos.UsersRepository;
 import com.completedSpring.photonlife.models.Users.Post;
+import com.completedSpring.photonlife.repos.PostRepository;
+import com.completedSpring.photonlife.repos.UsersRepository;
 import com.completedSpring.photonlife.services.Email.EmailService;
 import com.completedSpring.photonlife.services.Features.SearchFeatureStringService;
 import org.springframework.web.bind.annotation.*;

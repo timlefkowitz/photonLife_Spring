@@ -1,10 +1,10 @@
 package com.completedSpring.photonlife.models.Post;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+
+@Entity
+@Table(name="categoryTableAndPostCategoryTable")
 public class CategoryTableandPostCategoryTable {
 
     @Id
@@ -38,6 +38,10 @@ public class CategoryTableandPostCategoryTable {
         MetaTitle = metaTitle;
         Slug = slug;
         Content = content;
+    }
+
+    public CategoryTableandPostCategoryTable() {
+
     }
 
     public long getId() {

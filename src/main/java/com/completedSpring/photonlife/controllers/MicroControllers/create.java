@@ -1,8 +1,8 @@
 package com.completedSpring.photonlife.controllers.MicroControllers;
 
 
-import com.completedSpring.photonlife.daos.PostRepository;
-import com.completedSpring.photonlife.daos.UsersRepository;
+import com.completedSpring.photonlife.repos.PostRepository;
+import com.completedSpring.photonlife.repos.UsersRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 
 public class create {

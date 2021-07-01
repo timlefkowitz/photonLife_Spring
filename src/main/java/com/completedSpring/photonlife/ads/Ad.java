@@ -27,6 +27,13 @@ public class Ad {
 
     //Constructors
 
+
+    public Ad(long id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+    }
+
     public Ad() {
     }
 

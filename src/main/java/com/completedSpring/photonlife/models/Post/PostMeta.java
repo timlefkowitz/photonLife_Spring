@@ -1,7 +1,12 @@
 package com.completedSpring.photonlife.models.Post;
 
+import jdk.jfr.DataAmount;
+
 import javax.persistence.*;
 
+
+@Entity
+@Table(name="postMeta")
 public class PostMeta {
 
 

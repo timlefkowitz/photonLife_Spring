@@ -7,6 +7,9 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
+
+@Entity
+@Table(name="postCommentTable")
 public class PostCommentTable {
 
     @Id

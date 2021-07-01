@@ -1,8 +1,8 @@
 package com.completedSpring.photonlife.controllers.MicroControllers;
 
 
-import com.completedSpring.photonlife.daos.PostRepository;
 import com.completedSpring.photonlife.models.Users.Post;
+import com.completedSpring.photonlife.repos.PostRepository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
