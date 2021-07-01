@@ -1,8 +1,6 @@
 package com.completedSpring.photonlife.models.Ads;
 
 
-import com.completedSpring.photonlife.models.Post.Post;
-
 import javax.persistence.*;
 
 @Entity
@@ -18,28 +16,28 @@ public class AdImage {
     @Column(nullable = false)
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "post_id")
-    private com.completedSpring.photonlife.models.Post.Post Post;
+//    @ManyToOne
+//    @JoinColumn(name = "post_id")
+//    private com.completedSpring.photonlife.models.Post.Post Post;
 
     public AdImage() {}
 
 
-    //insert
-    public AdImage(String path, String description, Post Post) {
-        this.path = path;
-        this.description = description;
-        this.Post = Post;
-    }
+//    //insert
+//    public AdImage(String path, String description, Post Post) {
+//        this.path = path;
+//        this.description = description;
+//        this.Post = Post;
+//    }
 
     //update
-
-    public AdImage(long id, String path, String description, Post Post) {
-        this.id = id;
-        this.path = path;
-        this.description = description;
-        this.Post = Post;
-    }
+//
+//    public AdImage(long id, String path, String description, Post Post) {
+//        this.id = id;
+//        this.path = path;
+//        this.description = description;
+//        this.Post = Post;
+//    }
 
     public long getId() {
         return id;
@@ -65,11 +63,11 @@ public class AdImage {
         this.description = description;
     }
 
-    public Post getAd() {
-        return Post;
-    }
-
-    public void setAd(Post ad) {
-        this.Post = Post;
-    }
+//    public Post getAd() {
+//        return Post;
+//    }
+//
+//    public void setAd(Post ad) {
+//        this.Post = Post;
+//    }
 }

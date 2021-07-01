@@ -32,8 +32,9 @@ public class PostCommentTable {
     @Column(name = "CreatedAt")
     private java.sql.Timestamp CreatedAt;
 
-    @Column(name = "CreatedAt")
-    private java.sql.Timestamp CreatedAt;
+    @Column(name = "PublishedAt")
+    private java.sql.Timestamp PublishedAt;
+
 
     @Column(nullable = false, length = 50)
     private String content;
