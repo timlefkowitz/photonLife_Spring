@@ -3,6 +3,8 @@ package com.completedSpring.photonlife.models.Users;
 import com.completedSpring.photonlife.models.Post.Post;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
@@ -19,13 +21,13 @@ public class User {
     private String firstName;
 
     @Column(nullable = false, length = 100)
-    private String lastName;
-
-    @Column(nullable = false, length = 100)
     private String middleName;
 
     @Column(nullable = false, length = 100)
-    private String mobile;
+    private String lastName;
+
+    @Column(nullable = false, length = 100)
+    private long mobile;
 
     @Column(nullable = false, length = 50)
     private String email;
@@ -38,90 +40,44 @@ public class User {
 
     ////// DATE COLUMNS ARE HERE BASED ON MY DATABASE DESIGN
 
-
-    /// This is for
-    @Column(name = "LastLogin")
-    private java.sql.Date LastLogin;
-
     @Column(name = "RegisteredAt")
-    private java.sql.Timestamp publishedOn;
+    private java.sql.Timestamp subscribedOn;
 
-    @Column(nullable = false, length = 250)
-    private String ad;
+    @Column(name = "LastLogin")
+    private java.sql.Timestamp LastLogin;
 
+    @Column(name = "publishedOn")
+    private java.sql.Date publishedOn;
+
+    @Column(nullable = false, length = 50)
+    private String Intro;
 
         //Author details to be displayed on the author page
     @Column(nullable = false, length = 50)
     private String profile;
 
-    @Column(nullable = false, length = 50)
-    private String email;
-
-    @Column(nullable = false, length = 50)
-    private String email;
-
-    @Column(nullable = false, length = 50)
-    private String email;
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<Post> posts;
+    private List<User> users;
 
     /*
     ------------------------------------------------------------------------------------------------------------
      */ //          Constructors
 
-
-    public User() {
-    }
-
-    //Create
-    public User(String userName, String email, String password, List<Post> posts) {
-        this.userName = userName;
-        this.email = email;
-        this.passwordHash = password;
-        this.posts = posts;
-
-        // i want to take firstname and lastname off for now
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-    }
-
-
-    // READ
-
-    public User(Long id, String email, String userName, String password, List<Post> posts){
+    public User(long id, String firstName, String middleName, String lastName, long mobile, String email, String userName, String passwordHash, Timestamp subscribedOn, Timestamp lastLogin, Date publishedOn, String intro, String profile, List<User> users) {
         this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.mobile = mobile;
         this.email = email;
         this.userName = userName;
-        this.passwordHash = password;
-        this.posts= posts;
-    }
-
-
-
-    //Copy
-    public User(User copy){
-        id = copy.id;
-        email = copy.userName;
-        userName = copy.userName;
-        passwordHash = copy.passwordHash;
-    }
-
-
-
-
-    //Update constructor
-
-    public User(long id, String userName, String email, String password, List<Post> posts) {
-        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-        this.userName = userName;
-        this.email = email;
-        this.passwordHash = password;
-
-        // Unsure if i can just add this.post here. because i would have to target the same post when posted?
-        this.posts = posts;
+        this.passwordHash = passwordHash;
+        this.subscribedOn = subscribedOn;
+        LastLogin = lastLogin;
+        this.publishedOn = publishedOn;
+        Intro = intro;
+        this.profile = profile;
+        this.users = users;
     }
 
 
@@ -136,9 +92,9 @@ public class User {
     // Getters and Setters
 
 
-//    public long getId() {
-//        return id;
-//    }
+    public long getId() {
+        return id;
+    }
 
     public void setId(long id) {
         this.id = id;
@@ -152,6 +108,14 @@ public class User {
         this.firstName = firstName;
     }
 
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -160,62 +124,83 @@ public class User {
         this.lastName = lastName;
     }
 
-//    public String getUserName() {
-//        return userName;
-//    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public long getMobile() {
+        return mobile;
     }
 
-//    public String getEmail() {
-//        return email;
-//    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return passwordHash;
-    }
-
-    public void setPassword(String password) {
-        this.passwordHash = password;
-    }
-//    public List<Ad> getAd(){
-//        return ad;
-//    }
-//
-//    public void setAd(<List<Ad> ad){
-//        this.ad = ad;
-//    }
-
-
-    public String getAd() {
-        return ad;
-    }
-
-    public void setAd(String ad) {
-        this.ad = ad;
-    }
-
-    public List<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setMobile(long mobile) {
+        this.mobile = mobile;
     }
 
     public String getEmail() {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getUserName() {
         return userName;
     }
 
-    public String getOrderNumber() {
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public Timestamp getSubscribedOn() {
+        return subscribedOn;
+    }
+
+    public void setSubscribedOn(Timestamp subscribedOn) {
+        this.subscribedOn = subscribedOn;
+    }
+
+    public Timestamp getLastLogin() {
+        return LastLogin;
+    }
+
+    public void setLastLogin(Timestamp lastLogin) {
+        LastLogin = lastLogin;
+    }
+
+    public Date getPublishedOn() {
+        return publishedOn;
+    }
+
+    public void setPublishedOn(Date publishedOn) {
+        this.publishedOn = publishedOn;
+    }
+
+    public String getIntro() {
+        return Intro;
+    }
+
+    public void setIntro(String intro) {
+        Intro = intro;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

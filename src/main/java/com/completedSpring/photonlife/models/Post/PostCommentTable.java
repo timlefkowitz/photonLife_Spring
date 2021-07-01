@@ -1,19 +1,20 @@
-package com.completedSpring.photonlife.models.Users;
+package com.completedSpring.photonlife.models.Post;
+
+import com.completedSpring.photonlife.models.Users.User;
 
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
-public class Post {
-
+public class PostCommentTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(nullable = false, length = 100)
-    private String AuthorId;
+    private String PostId;
 
     @Column(nullable = false, length = 100)
     private String ParentId;
@@ -21,58 +22,43 @@ public class Post {
     @Column(nullable = false, length = 100)
     private String Title;
 
-    @Column(nullable = false, length = 100)
-    private String MetaTitle;
+    ///  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+    //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]    DateStampEnties
 
-    @Column(nullable = false, length = 50)
-    private String Slug;
 
-    @Column(nullable = false, length = 50)
-    private String Summary;
-
-    /// This is for
     @Column(name = "Published")
     private java.sql.Date published;
 
     @Column(name = "CreatedAt")
     private java.sql.Timestamp CreatedAt;
 
-    @Column(name = "UpdatedAt")
-    private java.sql.Timestamp UpdatedAt;
-
-    @Column(name = "PublishedAt")
-    private java.sql.Timestamp PublishedAt;
+    @Column(name = "CreatedAt")
+    private java.sql.Timestamp CreatedAt;
 
     @Column(nullable = false, length = 50)
     private String content;
 
-
-
-    ////// DATE COLUMNS ARE HERE BASED ON MY DATABASE DESIGN
-
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<User> users;
 
+    ///  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+    //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]    Constructors
 
-    //////// Constructors
-
-
-    public Post(long id, String authorId, String parentId, String title, String metaTitle, String slug, String summary, Date published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, List<User> users) {
+    public PostCommentTable(long id, String postId, String parentId, String title, Date published, Timestamp createdAt, Timestamp createdAt1, String content, List<User> users) {
         this.id = id;
-        AuthorId = authorId;
+        PostId = postId;
         ParentId = parentId;
         Title = title;
-        MetaTitle = metaTitle;
-        Slug = slug;
-        Summary = summary;
         this.published = published;
         CreatedAt = createdAt;
-        UpdatedAt = updatedAt;
-        PublishedAt = publishedAt;
+        CreatedAt = createdAt1;
         this.content = content;
         this.users = users;
     }
+
+
+    ///  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+    //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]    Getters and Setters
 
 
     public long getId() {
@@ -83,12 +69,12 @@ public class Post {
         this.id = id;
     }
 
-    public String getAuthorId() {
-        return AuthorId;
+    public String getPostId() {
+        return PostId;
     }
 
-    public void setAuthorId(String authorId) {
-        AuthorId = authorId;
+    public void setPostId(String postId) {
+        PostId = postId;
     }
 
     public String getParentId() {
@@ -107,30 +93,6 @@ public class Post {
         Title = title;
     }
 
-    public String getMetaTitle() {
-        return MetaTitle;
-    }
-
-    public void setMetaTitle(String metaTitle) {
-        MetaTitle = metaTitle;
-    }
-
-    public String getSlug() {
-        return Slug;
-    }
-
-    public void setSlug(String slug) {
-        Slug = slug;
-    }
-
-    public String getSummary() {
-        return Summary;
-    }
-
-    public void setSummary(String summary) {
-        Summary = summary;
-    }
-
     public Date getPublished() {
         return published;
     }
@@ -145,22 +107,6 @@ public class Post {
 
     public void setCreatedAt(Timestamp createdAt) {
         CreatedAt = createdAt;
-    }
-
-    public Timestamp getUpdatedAt() {
-        return UpdatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        UpdatedAt = updatedAt;
-    }
-
-    public Timestamp getPublishedAt() {
-        return PublishedAt;
-    }
-
-    public void setPublishedAt(Timestamp publishedAt) {
-        PublishedAt = publishedAt;
     }
 
     public String getContent() {
