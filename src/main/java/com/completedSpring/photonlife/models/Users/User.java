@@ -10,8 +10,6 @@ import java.util.List;
 @Table(name="users")
 public class User {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -76,6 +74,13 @@ public class User {
         this.publishedOn = publishedOn;
         Intro = intro;
         this.profile = profile;
+    }
+
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        userName = copy.userName;
+        passwordHash = copy.passwordHash;
     }
 
     public User(Timestamp registeredAt) {
