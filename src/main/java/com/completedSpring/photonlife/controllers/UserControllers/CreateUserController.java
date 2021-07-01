@@ -32,7 +32,8 @@ public class CreateUserController {
     @PostMapping("/create")
     public String addNewOrder(@RequestParam(name="firstName") String firstName,@RequestParam(name="middleName") String middleName,@RequestParam(name="lastName") String lastName,@RequestParam(name="mobile") long mobile,@RequestParam(name="email") String email,@RequestParam(name="userName") String userName, @RequestParam(name="passwordHash") String passwordHash){
 
-        User n = new User();
+
+        User n = new Users();
         n.setFirstName(firstName);
         n.setMiddleName(middleName);
         n.setLastName(lastName);
