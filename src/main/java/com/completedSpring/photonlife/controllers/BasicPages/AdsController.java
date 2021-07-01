@@ -1,4 +1,4 @@
-package com.completedSpring.photonlife.controllers;
+package com.completedSpring.photonlife.controllers.BasicPages;
 
 
 import com.completedSpring.photonlife.daos.PostRepository;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-public class AdController {
+public class AdsController {
 
 
     private final SearchFeatureStringService searchFeatureStringService;
@@ -25,7 +25,7 @@ public class AdController {
     private UsersRepository usersDao;
 
 
-    public AdController(PostRepository adDao, UsersRepository usersDao, SearchFeatureStringService searchFeatureStringService, EmailService emailService){
+    public AdsController(PostRepository adDao, UsersRepository usersDao, SearchFeatureStringService searchFeatureStringService, EmailService emailService){
         this.adsDao = adDao;
         this.usersDao = usersDao;
         this.searchFeatureStringService = searchFeatureStringService;
@@ -34,7 +34,7 @@ public class AdController {
 
     @GetMapping("/ads")
     public String index(Model model) {
-        List<Post> adsList = adsDao.findAll();
+        List<Ad> adsList = adsDao.findAll();
         model.addAttribute("ads", adsDao.findAll());
         model.addAttribute("noAdsFound", adsList.size() == 0);
         model.addAttribute("topAd", adsDao.findByTitle("bicycle north side"));

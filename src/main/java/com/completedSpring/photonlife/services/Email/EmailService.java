@@ -1,6 +1,8 @@
 package com.completedSpring.photonlife.services.Email;
 
 import com.completedSpring.photonlife.models.Post.Post;
+import com.completedSpring.photonlife.models.Users.Post;
+import com.completedSpring.photonlife.models.Users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
@@ -21,7 +23,7 @@ public class EmailService {
     public void prepareAndSend(Post ad, String subject, String body) {
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setFrom(from);
-        msg.setTo(ad.getUser().getEmail());
+        msg.setTo(User.getUser().getEmail());
         msg.setSubject(subject);
         msg.setText(body);
 

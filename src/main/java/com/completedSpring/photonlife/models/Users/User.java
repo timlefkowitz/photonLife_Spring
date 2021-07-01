@@ -41,7 +41,7 @@ public class User {
     ////// DATE COLUMNS ARE HERE BASED ON MY DATABASE DESIGN
 
     @Column(name = "RegisteredAt")
-    private java.sql.Timestamp subscribedOn;
+    private java.sql.Timestamp RegisteredAt;
 
     @Column(name = "LastLogin")
     private java.sql.Timestamp LastLogin;
@@ -72,7 +72,7 @@ public class User {
         this.email = email;
         this.userName = userName;
         this.passwordHash = passwordHash;
-        this.subscribedOn = subscribedOn;
+        this.RegisteredAt = subscribedOn;
         LastLogin = lastLogin;
         this.publishedOn = publishedOn;
         Intro = intro;
@@ -80,10 +80,9 @@ public class User {
         this.users = users;
     }
 
-
-
-
-
+    public User(Timestamp registeredAt) {
+        RegisteredAt = registeredAt;
+    }
 
     /*
     ------------------------------------------------------------------------------------------------------------
@@ -157,11 +156,19 @@ public class User {
     }
 
     public Timestamp getSubscribedOn() {
-        return subscribedOn;
+        return RegisteredAt;
     }
 
-    public void setSubscribedOn(Timestamp subscribedOn) {
-        this.subscribedOn = subscribedOn;
+    public void SetRegisteredAt(Timestamp subscribedOn) {
+        this.RegisteredAt = subscribedOn;
+    }
+
+    public Timestamp getRegisteredAt() {
+        return RegisteredAt;
+    }
+
+    public void setRegisteredAt(Timestamp registeredAt) {
+        RegisteredAt = registeredAt;
     }
 
     public Timestamp getLastLogin() {
