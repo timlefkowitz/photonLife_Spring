@@ -18,7 +18,7 @@ public class HomeController {
 
     // Show Constructors
 
-    @GetMapping("/")
+    @GetMapping("view/home")
     public String show(Model view){
         return"index";
     }
