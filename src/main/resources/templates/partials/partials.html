@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-                xmlns:th="http://www.thymeleaf.org/extras/spring-security">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
+<div sec:authorize="hasRole('USER')">Text visible to user.</div>
+<div sec:authorize="hasRole('ADMIN')">Text visible to admin.</div>
+<div sec:authorize="isAuthenticated()">
 
 <nav class="navbar-nav ml-auto">
     <li class="dropdown user user-menu" sec:authorize="hasAuthority('USER')"></li>
@@ -15,4 +16,4 @@
 
 
 </body>
-</html>
+</>
