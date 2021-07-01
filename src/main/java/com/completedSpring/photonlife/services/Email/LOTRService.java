@@ -7,16 +7,16 @@ import org.springframework.stereotype.Service;
 public class LOTRService {
 
 
-    private final String BASE_URL = "https://the-one-api.dev/v2/";
-
-
-
-
-    public String fetchBookInfo(String text){
-
-
-        String result = "";
-
-        return result;
-    }
+//    private final String BASE_URL = "https://the-one-api.dev/v2/";
+//
+//
+//
+//
+//    public String fetchBookInfo(String text){
+//
+//
+//        String result = "";
+//
+//        return result;
+//    }
 }

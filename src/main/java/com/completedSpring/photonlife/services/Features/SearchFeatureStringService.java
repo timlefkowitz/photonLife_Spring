@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class SearchFeatureStringService {
 
 
-    public String shortenString(String originalString){
-        return "short string";
-    }
+//    public String shortenString(String originalString){
+//        return "short string";
+//    }
 }
