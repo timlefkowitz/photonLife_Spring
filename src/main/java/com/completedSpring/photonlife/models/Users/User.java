@@ -1,6 +1,5 @@
 package com.completedSpring.photonlife.models.Users;
 
-import com.completedSpring.photonlife.models.Post.Post;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -82,6 +81,10 @@ public class User {
 
     public User(Timestamp registeredAt) {
         RegisteredAt = registeredAt;
+    }
+
+    public User() {
+
     }
 
     /*
@@ -209,5 +212,8 @@ public class User {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    public void setpasswordHash(String password) {
     }
 }

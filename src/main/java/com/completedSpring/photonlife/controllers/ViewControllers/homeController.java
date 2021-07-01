@@ -2,7 +2,7 @@ package com.completedSpring.photonlife.controllers.BasicPages;
 
 import com.completedSpring.photonlife.daos.PostRepository;
 import com.completedSpring.photonlife.daos.UsersRepository;
-import com.completedSpring.photonlife.models.Post.Post;
+import com.completedSpring.photonlife.models.Users.Post;
 import com.completedSpring.photonlife.services.Email.EmailService;
 import com.completedSpring.photonlife.services.Features.SearchFeatureStringService;
 import org.springframework.web.bind.annotation.*;
@@ -41,7 +41,6 @@ public class homeController {
         Post foundAd = postDao.getById(id); // select * from ads where id = ?
         // edit the ad
         foundAd.setTitle(title);
-        foundAd.setDescription(desc);
         // save the changes
         postDao.save(foundAd); // update ads set title = ? where id = ?
         return "home";
@@ -57,7 +56,6 @@ public class homeController {
         Post foundAd = postDao.getById(id); // select * from ads where id = ?
         // edit the ad
         foundAd.setTitle(title);
-        foundAd.setDescription(desc);
         // save the changes
         postDao.save(foundAd); // update ads set title = ? where id = ?
         return "ad updated";
@@ -72,7 +70,6 @@ public class homeController {
         Post foundAd = postDao.getById(id); // select * from ads where id = ?
         // edit the ad
         foundAd.setTitle(title);
-        foundAd.setDescription(desc);
         // save the changes
         postDao.save(foundAd); // update ads set title = ? where id = ?
         return "ad updated";

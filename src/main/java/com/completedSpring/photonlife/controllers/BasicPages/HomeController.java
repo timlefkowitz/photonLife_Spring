@@ -1,7 +1,6 @@
 package com.completedSpring.photonlife.controllers.BasicPages;
 
 
-import com.completedSpring.photonlife.models.Users.User;
 import com.completedSpring.photonlife.repos.UsersRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,11 +39,11 @@ public class HomeController {
         return "orders/edit";
     }
 
-    @PostMapping("show/{id}/edit")
-    public String updateOrder(@PathVariable long id, @ModelAttribute User orderToUpdate){
-        usersDao.save(orderToUpdate);
-        return "redirect:/show" + orderToUpdate.getOrderNumber();
-    }
+//    @PostMapping("show/{id}/edit")
+//    public String updateOrder(@PathVariable long id, @ModelAttribute User orderToUpdate){
+//        usersDao.save(orderToUpdate);
+//        return "redirect:/show" + orderToUpdate.getOrderNumber();
+//    }
 
     @GetMapping("show/{id}/delete")
     public String showdelete(@PathVariable Long id, Model view)
@@ -52,35 +51,16 @@ public class HomeController {
         view.addAttribute("ads", usersDao.getById(id));
         return "orders/delete";
     }
+//
+//    @PostMapping("show/{id}/delete")
+//    public String deleteOrder(@PathVariable Long id)
+//    {
+//        UsersRepository user = usersDao.getById(id);
+//        usersDao.delete(user);
+//        return "redirect:/show";
+//    }
 
-    @PostMapping("show/{id}/delete")
-    public String deleteOrder(@PathVariable Long id)
-    {
-        UsersRepository user = usersDao.getById(id);
-        usersDao.delete(user);
-        return "redirect:/show";
-    }
 
 
-    /////////////// Create Controllers
-
-    @GetMapping("/create")
-    public String IndexForCreate(){
-        return"orders/create";
-    }
-
-    @PostMapping("/create")
-    public String addNewOrder(@RequestParam(name="firstName") String firstName, @RequestParam(name="lastName") String lastName ,@RequestParam(name="email") String email, @RequestParam(name="userName") Double userName, @RequestParam(name="password") String password, @RequestParam(name="ad") String ad){
-
-        User n = new User();
-        n.setFirstName(firstName);
-        n.setLastName(lastName);
-        n.setUserName(userName);
-        n.setEmail(email);
-        n.setpassword(password);
-        n.setAd(ad);
-        usersDao.save(n);
-        return "redirect:/show";
-    }
 
 }

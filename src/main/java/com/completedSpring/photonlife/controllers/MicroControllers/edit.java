@@ -2,7 +2,7 @@ package com.completedSpring.photonlife.controllers.MicroControllers;
 
 
 import com.completedSpring.photonlife.daos.PostRepository;
-import com.completedSpring.photonlife.models.Post.Post;
+import com.completedSpring.photonlife.models.Users.Post;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +34,6 @@ public class edit {
         Post foundAd = adsDao.getById(id); // select * FROM ads where id = ?
         //edit the ad
         foundAd.setTitle(title);
-        foundAd.setDescription(desc);
         //save the changes
         adsDao.save(foundAd);
         return "ad updated";
