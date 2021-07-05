@@ -150,6 +150,7 @@ public class CodingQuestions {
             //  fizzbuzz4(55);
        // fizzbuzz5(70)    ;
         //fizzbuzz6(40);
-            fizzbuzz6(40);
+          //  fizzbuzz6(40);
+            fizzbuzz8(45);
         }
 }
