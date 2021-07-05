@@ -73,6 +73,20 @@ public class CodingQuestions {
         }
     }
 
+    private static void fizzbuzz5(int num)
+    {
+        for (int i = 1; i <= num; i++)
+        {
+            if(((i % 5) == 0) && ((i % 7) == 0))
+                System.out.println("FizzBuzz");
+            else if((i % 5) == 0)
+                System.out.println("Buzz");
+            else
+                System.out.println(i);
+
+        }
+    }
+
 
 
 
@@ -82,6 +96,7 @@ public class CodingQuestions {
         //fizzbuzz(100);
         //fizzbuzz2(30);
           //  fizzbuzz3(40);
-            fizzbuzz4(55);
+            //  fizzbuzz4(55);
+        fizzbuzz5(70)    ;
         }
 }
