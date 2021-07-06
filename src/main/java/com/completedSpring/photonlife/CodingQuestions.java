@@ -168,6 +168,22 @@ public class CodingQuestions {
         }
     }
 
+    private static void fizzbuzz11(int num)
+    {
+        for(int i =1; i<= num ; i++)
+        {
+            if(((i % 5) == 0) && ((i % 7) == 0))
+                System.out.println("FizzBuzz");
+            else if(( i % 5 ) == 0)
+                System.out.println("Fizz");
+            else if(( i % 7 ) == 0)
+                System.out.print("Buzz");
+            else
+                System.out.println(i);
+
+        }
+    }
+
 
 
 
@@ -183,6 +199,7 @@ public class CodingQuestions {
           //  fizzbuzz6(40);
          //   fizzbuzz8(45);
            // fizzbuzz9(45);
-            fizzbuzz10(45);
+//            fizzbuzz10(45);
+        fizzbuzz11(55);
         }
 }
