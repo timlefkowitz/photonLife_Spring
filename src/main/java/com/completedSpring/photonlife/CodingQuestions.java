@@ -190,14 +190,14 @@ public class CodingQuestions {
             */
 
     static void Fibonacci(int num) {
-        int num1 = 0, num2 = 1,
+        int num1 = 0, num2 = 1;
 
         int counter = 0;
 
         //Iterate till counter is N
         while (counter < num) {
             //Print the number
-            System.outprint(num1 + " ");
+            System.out.print(num1 + " ");
 
             //Swap
             int num3 = num2 + num1;
@@ -209,20 +209,11 @@ public class CodingQuestions {
     }
 
 
-    // Driver Code
-    public static void(String[] args) {
-        // Given Number N
-        int num = 10;
-        // Function Call
-        Fibonacci(num);
-    }
-
     //=
 
 
     static void Fibonacci2(int num) {
-        int num1 = 0;
-        num2 = 1;
+        int num1 = 0, num2 = 1;
 
         int counter = 0;
 
@@ -250,7 +241,7 @@ public class CodingQuestions {
 
         //Iterate till counter is num
         while (counter < num) {
-            System.out.print(num1 + " ") '
+            System.out.print(num1 + " ");
 
             //swap
             int num3 = num2 + num1;
@@ -271,7 +262,7 @@ public class CodingQuestions {
 
         //Iterate till counter is num
         while (counter < num) {
-            System.out.print(num1 + " ")
+            System.out.print(num1 + " ");
 
             //Swap
             int num3 = num2 + num1;
@@ -345,7 +336,7 @@ public class CodingQuestions {
     static void Fibonacci8(int num) {
         int num1 = 0, num2 = 1;
         int counter = 0;
-        while (counter > num) {
+        while (counter < num) {
             System.out.print(num1 + " ");
             int num3 = num2 + num1;
             num1 = num2;
@@ -356,18 +347,32 @@ public class CodingQuestions {
 
 
     static void Fibonacci9(int num) {
-        int num1 =0, num2 =1;
+        int num1 = 0, num2 = 1;
         int counter = 0;
-        while (counter > num) {
+        while (counter < num) {
 
-        System.out.print(num1 + "  ");
-        int num3 = num2 + num1;
-        num1 = num2;
-        num2 = num3;
-        counter = counter +1;
+            System.out.print(num1 + "  ");
+            int num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+            counter = counter + 1;
 
         }
 
+    }
+
+
+    static void Fibonacci10(int num)
+    {
+        int num1 = 0, num2 =1;
+        int counter = 0;
+        while (counter < num ){
+            System.out.print(num1 + " ");
+            int num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+            counter = counter +1;
+        }
     }
 
 
@@ -375,7 +380,12 @@ public class CodingQuestions {
 
 
 
-            //{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
+
+
+
+
+
+    //{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
             //{}{}{}{}{}{}{}{}{}{}{}{}             main            {}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
             //{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
 
@@ -397,9 +407,9 @@ public class CodingQuestions {
 
                 int num = 10;
 
-                Fibonacci2(num);
+                Fibonacci10(num);
 
             }
-        }
-    }
+
+
 }
