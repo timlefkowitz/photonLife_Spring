@@ -182,6 +182,24 @@ public class CodingQuestions {
                 System.out.println(i);
         }
     }
+            
+            private static void fizzbuzz (int num)
+            {
+                        for(int i ; i < num ; i++ )           
+            }_        if (( i % 5) == 0)) && (( i % 7 ) == 0))
+                        System.out.println("FizzBuzz");
+            else if((i % 5) == 0)
+                        System.out.print("Fizz")
+                        else if ((i % 7)== 0)
+                                    System.out.println("Buzz");
+            else
+                        System.out.println(i);
+            }
+}
+            
+            
+            
+   
 
             /*
              //{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
