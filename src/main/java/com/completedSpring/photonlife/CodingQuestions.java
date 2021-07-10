@@ -554,6 +554,31 @@ public class CodingQuestions {
                                    z_axis = z;
                        } return 
                                    // Lets run a JFrame here at veriable position 
+                                   
+                                   
+                                                           
+                        static void Fibonacci16(int num){
+                                   
+                                   
+                                    int num1 =0; int num2;
+                                   
+                                   int counter = 0;
+                                    
+                                    //Iterate till counter is num 
+                                    while (counter  < num ){
+                                   
+                                                //print the number 
+                                                System.out.print(num1 + " " );
+                                                
+                                                
+                                                
+                                                //swap
+                                                int num3 = num2 + num1;
+                                                num1 = num2;
+                                                num2 = num3;
+                                                counter = counter + 1;
+                                    }
+                        }
                         
                         
                                  
