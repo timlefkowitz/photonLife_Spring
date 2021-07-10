@@ -185,7 +185,7 @@ public class CodingQuestions {
             
             private static void fizzbuzz14 (int num)
             {
-                        for(int i ; i < num ; i++ )           
+                        for(int i = 1; i <= num ; i++ )           
             }_        if (( i % 5) == 0)) && (( i % 7 ) == 0))
                         System.out.println("FizzBuzz");
             else if((i % 5) == 0)
@@ -221,7 +221,7 @@ public class CodingQuestions {
 
 
             private static void fizzbuzz14(int num) {
-              for (int i = 0 ;i <= num ;i++ ){
+              for (int i = 1 ;i <= num ;i++ ){
                         if((i % 5) == 0) && (( i % 7) == 0))
                                     System.out.print("Fizz Buzz");
                           else if((i % 5) == 0)
@@ -233,9 +233,25 @@ public class CodingQuestions {
                                      
                                     
             }
+                        
+                        
+                        // I like this writing vv
 
 
-
+            static void fizzbuzz15(int num){
+                        for(int i = 1 ;i <= num ;i++ ){
+                                    if((i % 5) == 0) && ((i % 7) == 0))
+                                                System.out.print("FizzBuzz");
+                                    else if ((i % 5) == 0)
+                                                System.out.print("Fizz");
+                                    else if ((i % 7) == 0)
+                                                System.out.print("Buzz"); // my flow is much better here
+                                    else 
+                                                System.out.print(i); // I keep putting println() i think thats not needed. just print()
+                                    
+                        }
+            }
+                                   
             
             
             
