@@ -545,6 +545,17 @@ public class CodingQuestions {
                         }
                         
                         
+                        
+                        /// Idea for a objects postion
+                        
+                       static void RelativePosition(x, y, z){
+                                   x_axis = x;
+                                   y_axis = y;
+                                   z_axis = z;
+                       } return 
+                                   // Lets run a JFrame here at veriable position 
+                        
+                        
                                  
 
 
