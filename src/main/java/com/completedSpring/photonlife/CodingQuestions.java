@@ -183,7 +183,7 @@ public class CodingQuestions {
         }
     }
             
-            private static void fizzbuzz (int num)
+            private static void fizzbuzz14 (int num)
             {
                         for(int i ; i < num ; i++ )           
             }_        if (( i % 5) == 0)) && (( i % 7 ) == 0))
@@ -196,6 +196,29 @@ public class CodingQuestions {
                         System.out.println(i);
             }
 }
+
+
+
+
+           private static void fizzbuzz13(int num)
+            {
+             for (int i = 1; i <= num; i++)           
+            }           if(((i % 5 ) == 0) && ((i % 7) == 0))  /// is it a multiable of 5 and 7
+                        System.out.print("Fizz BuzzzzzzzzzzzzzZZZzZZZ");
+                        else if((i % 5) == 0) // When it's a multiable of 5;
+                                    System.out.print("Fizz");
+{
+ else if((if % 7) == 0) // When it's a multiable of 7
+}
+System.out.print("Buzz");
+else 
+            System.out.println("Buzz");
+else 
+            System.out.println(i)
+}
+}
+                                         
+
             
             
             
