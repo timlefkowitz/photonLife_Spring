@@ -201,23 +201,40 @@ public class CodingQuestions {
 
 
            private static void fizzbuzz13(int num)
-            {
-             for (int i = 1; i <= num; i++)           
-            }           if(((i % 5 ) == 0) && ((i % 7) == 0))  /// is it a multiable of 5 and 7
-                        System.out.print("Fizz BuzzzzzzzzzzzzzZZZzZZZ");
-                        else if((i % 5) == 0) // When it's a multiable of 5;
-                                    System.out.print("Fizz");
-{
- else if((if % 7) == 0) // When it's a multiable of 7
-}
-System.out.print("Buzz");
-else 
-            System.out.println("Buzz");
-else 
-            System.out.println(i)
-}
-}
-                                         
+                        {
+                         for (int i = 1; i <= num; i++)           
+                        }          
+                        if(((i % 5 ) == 0) && ((i % 7) == 0))  /// is it a multiable of 5 and 7
+                                     System.out.print("Fizz BuzzzzzzzzzzzzzZZZzZZZ");
+                                    else if((i % 5) == 0) // When it's a multiable of 5;
+                                     System.out.print("Fizz");
+                        {
+                                    else if((if % 7) == 0) // When it's a multiable of 7
+                        }
+                                    System.out.print("Buzz");
+                                                 else 
+                                    System.out.println("Buzz");
+                                                 else 
+                                    System.out.println(i)
+                        }
+                       }
+
+
+            private static void fizzbuzz14(int num) {
+              for (int i = 0 ;i <= num ;i++ ){
+                        if((i % 5) == 0) && (( i % 7) == 0))
+                                    System.out.print("Fizz Buzz");
+                          else if((i % 5) == 0)
+                                      System.out.print("fizz");
+                          else if((i % 7) == 0)
+                                      System.out.print("Buzz");
+                          else 
+                                      System.out.print(i);
+                                     
+                                    
+            }
+
+
 
             
             
