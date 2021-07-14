@@ -122,7 +122,7 @@
                   return false;
             
             Arrays.sort(str1);
-             Arrays.sort(str1);
+             Arrays.sort(str2);
             
             for (int i = 0; i < input1 ; i++ )
                   if(str1[i] != str2[i])
@@ -130,6 +130,24 @@
             
             return true;
       }
+
+static boolean Datachecker(char[] str1, char[] str2)
+{
+ int input1 = str1.length;     
+       int input2 = str2.length;    
+      
+      if(input1 != input2)
+            return false;
+      
+     Arrays.sort(str1);
+         Arrays.sort(str2);
+      
+      for(int i= 0 ; i < input1; i++)
+            if(str1[i] != str2[i])
+                  return false;
+      
+      return true;_
+}
 
 }
 
