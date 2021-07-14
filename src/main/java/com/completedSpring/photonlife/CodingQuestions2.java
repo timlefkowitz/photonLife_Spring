@@ -46,4 +46,33 @@ public static void main(String[] args)
     System.out.print("The two strings are not" + " anagram of each other");
 }
 
+
+
+// 2
+
+static boolean areAnagram(char[] str1, char[] str2)
+{
+ // Get lenghts of both strings 
+      int String1 = str1.length;
+      int String2 = str2.length;
+      
+      //If length of both strings is not the same, then they cannot be anagram
+      
+      if(String1 != String2)
+            return false;
+      
+      // Sort both Strings
+      Arrays.sort(str1);
+      Arrays.sort(str2);
+      
+      // Compare sorted Strings
+      for (int i = 0 ; i < n1; i++ )
+            if(str1[i] != str2[i])
+                  return false;
+      
+      return true;
+}
+
+}
+
 }
