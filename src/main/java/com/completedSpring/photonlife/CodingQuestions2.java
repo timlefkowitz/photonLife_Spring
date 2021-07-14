@@ -78,7 +78,7 @@
       {
        // Get lengths of both strings
             int String1 = str1.length;
-            int String1 = str1.length;
+            int String2 = str2.length;
             
             if(String1 != String2)
                   return false;
@@ -92,6 +92,24 @@
                         
                        return true;
             
+      }
+
+      static boolean DataChecker(char[] str1, char[] str2)
+      {
+       int input1 = str1.length;
+       int input2 = str2.length;
+            
+            if(input1 != input2)
+                  return false;
+            
+            Arrays.sort(str1);
+            Arrays.sort(str2);
+            
+            for ( int i = 0;i< n1;i++)
+                  if(str1[i] != str2[i])
+                        return false
+                        
+                        return true;
       }
 
 }
