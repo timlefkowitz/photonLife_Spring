@@ -251,6 +251,20 @@ public class CodingQuestions {
                                     
                         }
             }
+
+            //feeling a bit ill so i'm doing some of these problems 
+
+            static void fizzbuzz16(int num){
+                for (int i = 1; i<= num ; i++){
+                    if((i %5) == 0) && ((i % 7) == 0))
+                    System.out.print("FizzBuzz");
+                    else if((i%5) == 0)
+                    System.out.print("Fizz");
+                    else if((i%7) == 0)
+                    System.out.print("Buzz");
+                    else System.out.print(i);
+                }
+            }
                                    
             
             
